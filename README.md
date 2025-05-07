@@ -53,8 +53,7 @@ This will start the Nody MCP and load the list of tools that you inserted in the
 
 ### Override descriptions
 
-In order to create MCP tailored to your need and better indicate to the AI what tool and how a tool should be used, you can set a custom name and/or description for each tool added into the custom MCP. 
-This schema is used to announce to the LLM what tools are available. It offers you the opportunity to finetune these generic and vendor based descriptions according to your needs.
+To create an MCP tailored to your needs and provide clearer context to AI agents, you can customize the name and description of each tool in your Custom MCP. This schema helps AI models understand the available tools while allowing fine-tuned descriptions beyond vendor defaults.
 
 ### Requirements
 
@@ -73,7 +72,7 @@ Have a feature request or found a bug? Create a post in our [community forum](ht
 
 ## 🧩 Where You Can Use Nody MCPs 
 
-Nody MCPs are fully **MCP-compliant** and can be deployed to **any platform or client that supports the Model Context Protocol**. Below is a sample of popular environments where Nody-powered MCPs are already being used or integrated. 
+Nody MCPs are fully **MCP-compliant** and can be deployed to **any platform or client that supports the Model Context Protocol**. Below is a sample of popular environments where Nody-powered MCPs are already being used or integrated: 
 
 ### 🤖 Chatbots 
 
