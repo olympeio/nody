@@ -1,4 +1,4 @@
-# Nody 
+![Repository Icon](https://mcp.nody.dev/assets/nody-logo-green.png) # Nody 
 
 **Connect your tools to AI—securely, visually, and at scale.**
 
