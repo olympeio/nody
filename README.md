@@ -56,6 +56,17 @@ This will start the Nody MCP and load the list of tools that you inserted in the
 In order to create MCP tailored to your need and better indicate to the AI what tool and how a tool should be used, you can set a custom name and/or description for each tool added into the custom MCP. 
 This schema is used to announce to the LLM what tools are available. It offers you the opportunity to finetune these generic and vendor based descriptions according to your needs.
 
+### Requirements
+
+Nody VMCP package is an NPM package that requires NodeJS 18+ to work properly.
+
+You can check what version is installed on your machine with 
+```shell
+node --version
+```
+
+You can download and install the latest version from the [official website](https://nodejs.org/en/download).
+
 ## 💬 Community & Support 
 
 Have a feature request or found a bug? Create a post in our [community forum](https://forum.olympe.io/) and upvote ideas you’d like us to prioritize. We value your feedback! 
