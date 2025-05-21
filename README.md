@@ -6,7 +6,7 @@
 
 🌐 Try it out: [https://mcp.nody.dev](https://mcp.nody.dev)
 
-🚀 Get started: [mcp.nody.dev/getting-started](mcp.nody.dev/getting-started)
+🚀 Get started: [mcp.nody.dev/getting-started](https://mcp.nody.dev/getting-started)
 
 ## 🔧 Key Features 
 
