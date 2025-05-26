@@ -1,107 +1,96 @@
 # Nody
 
-**Connect your tools to AI—securely, visually, and at scale.**
+<p style="text-align: center;">
+  <img src="https://mcp.nody.dev/assets/nody-logo.svg" alt="Nody" width="96"/><br/>
+  <b>One MCP Server to TOOL them all!</b>
+</p>
 
-**Nody** is a developer-first platform designed to manage and deploy Model Context Protocol (MCP) servers and toolsets. It enables seamless composition and deployment of your internal tools, APIs, and enterprise services to AI agents through an intuitive visual interface—no more hand-coding complex JSON configs. 
+Nody is a developer-first platform for managing and deploying Model Context Protocol (MCP) servers and toolsets. It allows for easy creation and maintenance of tool collections built around use cases rather than vendors.
 
-🌐 Try it out: [https://mcp.nody.dev](https://mcp.nody.dev)
+# Overview
+Nody provides a powerful MCP Composer for creating and managing custom MCP servers. It enables you to personalize each tool's name and description to add context, helping agents use them with fewer tokens. It manages the configurations and secrets of MCP servers in one secure place, making it easier to deploy and scale your AI toolsets efficiently.
 
-🚀 Get started: [mcp.nody.dev/getting-started](https://mcp.nody.dev/getting-started)
+# Features
 
-## 🔧 Key Features 
+- **MCP Composer**  
+  A powerful visual interface for composing, editing, and managing MCP server tools into collections built around specific use cases.
 
-- MCP Composer<br/>
-  A powerful visual interface for composing, editing, and managing MCP servers and tool collections. 
-- Tool Personalization<br/>
-  Customize metadata, inputs, outputs, and documentation to optimize tool context for AI agents. 
-- Stick & Scale<br/>
-  Seamlessly expand MCPs by adding new tools without reconfiguring your stack.
-- Enterprise Security _(Coming soon)_ <br/>
-  Role-based access control and full audit logging across all MCP servers. 
-- MCP Sharing _(Coming soon)_ <br/>
-  Publish and share MCP configurations via public or private repositories with attribution. 
+- **Tool Customization**  
+  Customize tool names and descriptions to optimize context for AI agents based on your desired use cases.
 
-## 🏗️ Architecture 
+- **Configure Agents Once**  
+  Configure agents once and maintain tool collections and their descriptions through a centralized UI. No need to reconfigure agents later.
 
-- Graph-based backend using Neo4j for tool and relationship modeling. 
-- Distributed execution layer powered by a Node.js runtime environment. 
-- Orchestration and automation through [Olympe](https://www.olympe.io/) technology.
+- **Secure Configuration Storage**  
+  Secret values (API keys, tokens, etc.) are encrypted and stored securely. The encryption key is stored in a Vault accessible only by you.
 
-## 📖 How to use
+- **Monitor Execution of Collections**  
+  Track the execution of your collections and tools to know whether they're running properly.
 
-Once your custom MCP is built on [Nody](mcp.nody.dev), you'll get a JSON content to copy into your favorite MCP client that looks like this:
+- **Add Servers to Catalog**  
+  Extend your catalog by adding servers already deployed on NPM or UV public registries. Define the required configuration parameters and secrets to run them securely.
 
-```JSON
+# How to Use
+
+Once your Nody client is composed at [Nody](https://mcp.nody.dev), click the `Run it` button to get installation instructions.
+
+Example of a Nody client configuration to add to your favorite MCP client:
+
+```json
 {
   "mcpServers": {
-    "<custom mcp name>": {
+    "<Nody client name>": {
       "command": "npx",
       "args": [
         "-y",
         "@olympeio/nody-vmcp@latest"
       ],
       "env": {
-        "NODY_VMCP": "<custom MCP unique id>",
-        "NODY_KEY": "<your very own secret encryption key>" // OPTIONAL, used when authenticated, required to use secret values
+        "NODY_CLIENT_ID": "<Nody client id>", // REQUIRED, your Nody client ID
+        "NODY_USER_KEY": "<your very own secret encryption key>" // OPTIONAL, used when authenticated, required to decrypt secret values
       }
     }
   }
 }
 ```
 
-This will start the Nody MCP and load the list of tools that you inserted in the MCP edition panel.
+This starts the Nody client and loads the list of tools included in the collection with the configured customizations.
 
-### Override descriptions
+## Requirements
 
-To create an MCP tailored to your needs and provide clearer context to AI agents, you can customize the name and description of each tool in your Custom MCP. This schema helps AI models understand the available tools while allowing fine-tuned descriptions beyond vendor defaults.
+The Nody VMCP package is an NPM package that requires Node.js 18+ to work properly.
 
-### Requirements
-
-Nody VMCP package is an NPM package that requires NodeJS 18+ to work properly.
-
-You can check what version is installed on your machine with 
+Check your installed Node.js version with:
 ```shell
 node --version
 ```
+Download the latest version from the [official website](https://nodejs.org/en/download).
 
-You can download and install the latest version from the [official website](https://nodejs.org/en/download).
+# Roadmap
+Planned features and improvements:
 
-## 💬 Community & Support 
+- **Enterprise Security**  
+  Use your enterprise vault to store encryption keys. Enterprise-grade governance for AI tooling.
 
-Have a feature request or found a bug? Create a post in our [community forum](https://forum.olympe.io/) and upvote ideas you’d like us to prioritize. We value your feedback! 
+- **Collection Sharing (Templates)**  
+  Publish and share MCP configurations through public or private repositories with attribution.
 
-## 🧩 Where You Can Use Nody MCPs 
+- **Code Your Own Tools**  
+  Write and test your tools directly in Nody without needing to publish them on NPM, UV, or Docker.
 
-Nody MCPs are fully **MCP-compliant** and can be deployed to **any platform or client that supports the Model Context Protocol**. Below is a sample of popular environments where Nody-powered MCPs are already being used or integrated: 
+- **Integration of Existing APIs**  
+  Integrate APIs from your IT landscape into AI agents by wrapping them as MCP tools and composing them into collections.
 
-### 🤖 Chatbots 
+- **Add Docker and Local Servers**  
+  Add servers not deployed on NPM or UV registries, including local or Docker-based servers, and use them in the MCP Composer.
 
-Plug Nody MCPs directly into LLM chat interfaces to extend capabilities: 
+# Links
 
-- **Claude** (Anthropic)
-- **ChatGPT** (OpenAI) 
-- **Mistral-based apps**
-- **Custom LLM UIs** using frameworks like LangChain or Semantic Kernel 
-
-### 💻 Coding Assistants 
-
-Enhance developer productivity by integrating tools into AI-enhanced IDEs: 
-
-- **VSCode**
-- **Cursor**
-- **Zed, JetBrains IDEs** (planned)
-
-### 🧠 Agentic Platforms 
-
-Deploy tool-rich contexts into agent frameworks and workflow engines: 
-
-- AgentForce 
-- n8n
-- LangGraph, Autogen, and other multi-agent orchestration platforms 
-
-## 🔗 Related Links 
-
+- [Nody](https://mcp.nody.dev)
 - [Official MCP Documentation](https://modelcontextprotocol.io)
 - [Nody on NPM](https://www.npmjs.com/package/@olympeio/nody-vmcp)
 
- 
+# License
+Copyright (C) Olympe S.A. - All Rights Reserved
+Unauthorized copying of any of the files contained in this project, via any medium is strictly prohibited
+Proprietary and confidential
