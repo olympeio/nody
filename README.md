@@ -5,7 +5,7 @@
   <b>One MCP Server to TOOL them all!</b>
 </p>
 
-Nody is a developer-first platform for managing and deploying Model Context Protocol (MCP) servers and toolsets. It allows for easy creation and maintenance of tool collections built around use cases rather than vendors.
+Nody is a developer-first platform for managing and deploying Model Context Protocol (MCP) servers and toolsets. Nody technology maintains the tools collections in a knowledge graph. Nody clients exposing tools to your AI Agents request the knowledge graph to discover what tool should ben installed and exposed.
 
 # Overview
 Nody provides a powerful MCP Composer for creating and managing custom MCP servers. It enables you to personalize each tool's name and description to add context, helping agents use them with fewer tokens. It manages the configurations and secrets of MCP servers in one secure place, making it easier to deploy and scale your AI toolsets efficiently.
@@ -83,6 +83,10 @@ Planned features and improvements:
 
 - **Add Docker and Local Servers**  
   Add servers not deployed on NPM or UV registries, including local or Docker-based servers, and use them in the MCP Composer.
+
+# Architecture
+
+Nody clients are lightweight runtimes built on top of the Olympe Technology: a knowledge graph stored in a dedicated graph database describes the compositions of tools in collections, custom MCP and names and descriptions overrides. Nody Clients are distributed and connected to a centralized orchestrator providing required graph portions for the execution of the tools. Updates on tools and collections are notified in real time thanks to our event driven distributed archtitecture.
 
 # Links
 
